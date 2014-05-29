@@ -1,4 +1,6 @@
 """
+Made with Coding For Entrepreneurs, CodingForEntrepreneurs.com
+
 Django settings for seven project.
 
 For more information on this file, see
