@@ -7,5 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 		url(r'^$', 'profiles.views.home', name='home'),
+		url(r'^about/$', 'profiles.views.about', name='about'),
+		url(r'^contact/$', 'profiles.views.contact', name='contact'),
     url(r'^admin/', include(admin.site.urls)),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
