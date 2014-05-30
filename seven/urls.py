@@ -6,6 +6,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+		(r'^accounts/', include('allauth.urls')),
 		url(r'^$', 'profiles.views.home', name='home'),
 		url(r'^about/$', 'profiles.views.about', name='about'),
 		url(r'^contact/$', 'contact.views.contact', name='contact'),

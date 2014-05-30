@@ -46,11 +46,26 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'crispy_forms',
     'profiles',
+
 )
 
+#for Crispy Forms
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+#for AllAuth
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+
+SITE_ID = 1 
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_LOGOUT_ON_GET = True
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -67,8 +82,18 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
     "django.core.context_processors.static",
+    "django.core.context_processors.request",
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
+    "allauth.account.context_processors.account",
+    "allauth.socialaccount.context_processors.socialaccount",
+)
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend",
 )
 
 ROOT_URLCONF = 'seven.urls'
