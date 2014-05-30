@@ -1,5 +1,5 @@
 """
-Made with Coding For Entrepreneurs, CodingForEntrepreneurs.com
+Made with Coding For Entrepreneurs, http://www.CodingForEntrepreneurs.com
 
 Django settings for seven project.
 
@@ -87,4 +87,11 @@ TEMPLATE_DIRS = (
     #os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)),"static","templates"),
 )
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"static","media")
+
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),"static","static-only")
+STATICFILES_DIRS = (
+    os.path.join(os.path.dirname(BASE_DIR), "static", "static"),
+)
